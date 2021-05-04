@@ -1,6 +1,6 @@
 # RMI Deno Package
 
-<img align="right" width="200vw" src="./deno.svg">
+<img align="right" width="175vw" src="./deno.svg">
 
 ![](https://img.shields.io/badge/available%20on-deno.land/x-6B3E2E.svg?logo=deno&labelColor=555555&style=for-the-badge)
 ![](https://img.shields.io/github/v/release/swimauger/rmi.svg?color=C38452&style=for-the-badge)
