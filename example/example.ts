@@ -32,7 +32,7 @@ Registry.registerRoute({
   path: '/',
   response: async function(req: ServerRequest) {
     req.respond({
-      body: await Deno.readFile('./test.html')
+      body: await Deno.readTextFile('test.html')
     });
   }
 });

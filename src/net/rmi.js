@@ -1,4 +1,4 @@
-const rmi = (function() {
+export default (function() {
   const url = location.origin.replace(/http|https/, 'ws');
   const socket = new WebSocket(url), events = {}, api = {};
 
@@ -38,4 +38,4 @@ const rmi = (function() {
   };
 
   return api;
-})();
+});

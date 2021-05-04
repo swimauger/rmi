@@ -1,9 +1,8 @@
 import { serve, ServerRequest } from "https://deno.land/std@0.95.0/http/server.ts";
 import { Socket } from "./Socket.ts";
+import rmi from "./rmi.js";
 import { Registry } from "../api/Registry.ts";
 import { v4 } from "https://deno.land/std/uuid/mod.ts";
-
-const __dirname = new URL('.', import.meta.url).pathname as string;
 
 type RequestHandler = (req: ServerRequest) => void;
 
@@ -14,7 +13,7 @@ type Routes = {
 };
 
 export class http {
-  private static rmiScript: string = Deno.readTextFileSync(__dirname.replace('net/', 'api/client/rmi.js'));
+  private static rmiScript: string = `const rmi = (${rmi.toString()})();`;
   private static routes: Routes = {};
 
   static get(url: string, handler: RequestHandler) {
