@@ -76,7 +76,7 @@ export class Registry {
             constructor += `rmi.socket.on('${id}', ${func}.bind(this));\n`;
             break;
           case 'server':
-            bundle += `${remoteObject.name}['${key}'] = function(...args) {
+            bundle += `${remoteObject.name}.prototype['${key}'] = function(...args) {
               return new Promise(async resolve => {
                 await rmi.socket.ready;
                 rmi.socket.on('${id}', resolve);
