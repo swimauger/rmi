@@ -15,7 +15,7 @@ export class Socket {
         if (event.startsWith('__rmi:invoke')) {
           await socket.send(JSON.stringify({
             event,
-            data: await Registry.registries[event](data)
+            data: await Registry.registries[event](...data)
           }));
         }
         Socket.listeners[event]?.forEach(listener => {
