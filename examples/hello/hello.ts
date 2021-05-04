@@ -1,5 +1,5 @@
 import { ServerRequest } from "https://deno.land/std@0.95.0/http/server.ts";
-import { Registry, Side, Bundle } from "../mod.ts";
+import { Registry, Side, Bundle } from "../../mod.ts";
 
 // Creating a Remote Object
 class HelloService extends Bundle('hello') {
@@ -32,7 +32,7 @@ Registry.registerRoute({
   path: '/',
   response: async function(req: ServerRequest) {
     req.respond({
-      body: await Deno.readTextFile('test.html')
+      body: await Deno.readTextFile('hello.html')
     });
   }
 });

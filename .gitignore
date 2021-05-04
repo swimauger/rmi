@@ -105,3 +105,6 @@ dist
 
 # MacOS Junk
 .DS_Store
+
+# Examples
+examples/auth/users.json
